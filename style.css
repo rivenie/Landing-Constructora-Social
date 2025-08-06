@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner02.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/*Efecto de subrayado*/
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+/****************************/
+
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  border: 1px solid #f44336;
+  background: #f44336;
+  transition: 1s;
+}
+
+nav .fa {
+  display: none;
+}
+
+@media(max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+
+  nav .fa {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: #f44336;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+
+  .nav-links ul li {
+    display: block;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+
+}
+
+/*****************************************************************/
+
+.services {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.services-col {
+  flex-basis: 31%;
+  background: #fff3f3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.services-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/**************************************************************/
+
+.testimonials {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.testimonial-col {
+  flex-basis: 44%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  background-color: #fff3f3;
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+}
+
+.testimonial-col img {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.testimonial-col p {
+  padding: 0;
+}
+
+.testimonial-col h3 {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.testimonial-col .fa {
+  color: #f44336;
+
+}
+
+@media(max-width: 700px) {
+  .testimonial-col img {    
+    margin-left: 0;
+    margin-right: 15px;    
+  }
+}
+
+/********************************************/
+
+.cta{
+  margin: 100px auto;
+  width: 80%;
+  /*background-image: linear-gradient(rgba(0,0,0,0.7)), url(images/cta.jpg);*/
+  background-image: url(images/cta.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta h1{
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+@media(max-width: 700px){
+  .cta{
+    background-image: linear-gradient(rgba(0,0,0,0.2)), url(images/cta.jpg);
+  }
+  .cta h1{
+    font-size: 24px;
+  }  
+}
+
+/***********************************************************/
+
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer h4{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.icons .fa{
+  color: #f44336;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+
+
+
+
+
+
+
+
+
+.contenedor-tataraabuelo {
+  width: 100%;    
+  padding: 40px 0;
+}
+
+/* Contenedor ABUELO (centrado con ancho máximo) */
+.contenedor-abuelo {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Espacio entre contenedores-padre */
+}
+
+/* Contenedores PADRE (25% de ancho) */
+.contenedor-padre {
+  width: calc(25% - 10px);
+  /* Ajuste por el gap */
+  padding: 15px;
+  /* Espacio interno para separar visualmente al hijo */
+  background-color: transparent;
+  /* Fondo transparente */
+}
+
+/* Contenedores HIJO (con background-image) */
+.contenedor-hijo {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease-in-out;
+  /* Transición suave */
+  transform-origin: center;
+  /* Punto de origen para la escala */
+
+
+  /* Efecto degradado */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.7) 99%);
+  }
+
+  /* Borde opcional para mejor visualización */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover */
+.contenedor-hijo:hover {
+  transform: scale(0.95);
+  /* Ligera reducción de tamaño */
+}
+
+.contenedor-hijo::after {
+  /* ... (tu gradiente actual) ... */
+  opacity: 0.7;
+  /* Hacemos el gradiente más visible por defecto */
+  transition: all 0.5s ease-in-out;
+}
+
+.contenedor-hijo:hover::after {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 1;
+  /* Oscurece completamente al hacer hover */
+}
+
+.contenedor-hijo .hover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+  padding: 20px;
+  text-align: center;
+}
+
+.contenedor-hijo:hover .hover-content {
+  opacity: 1;
+  transform: scale(1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
+  opacity: 1;
+  /* Visible por defecto para el texto */
+}
+
+.hover-content h3 {
+  color: white;
+  font-weight: 600;
+  /* Semi-bold en estado normal */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+/* Iconos */
+.hover-content .icono {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.hover-content .icono i {
+  color: white;
+  font-size: 24px;
+}
+
+/* Botón (oculto inicialmente) */
+.hover-content .btn-vermas {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efectos hover */
+.contenedor-hijo:hover .hover-content h3 {
+  font-weight: 400;
+  /* Más delgado en hover */
+}
+
+.contenedor-hijo:hover .hover-content .icono {
+  background-color: #f44336;
+  /* Color principal en hover */
+}
+
+.contenedor-hijo:hover .hover-content .btn-vermas {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contenedor-padre:nth-child(1) .contenedor-hijo {
+  background-image: url('images/servicioInfraestructuraConstruccion.jpg');
+}
+
+.contenedor-padre:nth-child(2) .contenedor-hijo {
+  background-image: url('images/servicioBaseDatos.jpg');
+}
+
+.contenedor-padre:nth-child(3) .contenedor-hijo {
+  background-image: url('images/servicioCableado.jpg');
+}
+
+.contenedor-padre:nth-child(4) .contenedor-hijo {
+  background-image: url('images/servicioDrywall.jpg');
+}
+
+.contenedor-padre:nth-child(5) .contenedor-hijo {
+  background-image: url('images/servicioRemodelacionOficina.jpg');
+}
+
+.contenedor-padre:nth-child(6) .contenedor-hijo {
+  background-image: url('images/servicioPintura.jpg');
+}
+
+.contenedor-padre:nth-child(7) .contenedor-hijo {
+  background-image: url('images/servicioInstalacionesElectricas.jpg');
+}
+
+.contenedor-padre:nth-child(8) .contenedor-hijo {
+  background-image: url('images/servicioSistemaVigilancia.jpg');
+}
+
+/* Responsive: 2 columnas en móviles */
+@media (max-width: 768px) {
+  .contenedor-padre {
+    width: calc(50% - 10px);
+  }
+}
+
+/* Responsive: 1 columna en móviles muy pequeños */
+@media (max-width: 480px) {
+  .contenedor-padre {
+    width: 100%;
+  }
+}
