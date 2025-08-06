@@ -82,7 +82,7 @@ nav img {
 .nav-links ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 20px;
 }
 
 /*Efecto de subrayado*/
@@ -180,6 +180,13 @@ nav .fa {
 }
 
 /*****************************************************************/
+.servicesQuienessomos {
+  width: 100%;
+  background-image: url("images/fondoServicios01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .services {
   width: 80%;
@@ -233,6 +240,148 @@ h3 {
   }
 }
 
+/***************************************************************/
+
+.quienesSomos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.seccion-superior {
+  display: flex;
+  margin-bottom: 0;
+  /*opacity: 0;*/
+  /* Inicialmente oculto para animación */
+  overflow: hidden;
+}
+
+.imagen-vertical {
+  width: 55%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  /* Asegura que el recorte sea desde el centro */
+  transform: translateX(-100px);
+  /* Posición inicial para animación */
+  /*transition: all 0.5s ease-in-out;*/
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Contenedor interno para la imagen (nuevo elemento) */
+.imagen-container {
+  width: 110%;
+  /* 10% más ancho que el contenedor */
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-texto {
+  width: 45%;
+  padding: 40px;
+  background-color: white;
+  transform: translateX(100px);
+  /* Posición inicial para animación */
+  opacity: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+.logo-empresa {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.texto-descripcion {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.seccion-estadisticas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  background-color: #f44336;
+  padding: 40px;
+  border-radius: 0 0 50px 50px;
+  transform: translateY(50px);
+  /* Posición inicial para animación */
+  opacity: 0;
+}
+
+.estadistica-item {
+  text-align: center;
+  color: white;
+}
+
+.numero {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seccion-superior {
+    flex-direction: column;
+  }
+
+  .imagen-vertical,
+  .contenedor-texto {
+    width: 100%;
+  }
+
+  /* Desactiva las transformaciones de hover en móvil */
+  .imagen-vertical:hover,
+  .imagen-container {
+    transform: none !important;
+  }
+
+  /* Desactiva la animación GSAP para el contenedor */
+  .imagen-container {
+    transition: none !important;
+  }
+
+  /* Opcional: Desactiva el cambio de brillo en hover */
+  .contenedor-hijo:hover {
+    filter: none !important;
+  }
+
+
+  .imagen-vertical {
+    height: 300px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .contenedor-texto {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .seccion-estadisticas {
+    flex-wrap: wrap;
+  }
+
+  .estadistica-item {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
 /**************************************************************/
 
 .testimonials {
@@ -275,15 +424,15 @@ h3 {
 }
 
 @media(max-width: 700px) {
-  .testimonial-col img {    
+  .testimonial-col img {
     margin-left: 0;
-    margin-right: 15px;    
+    margin-right: 15px;
   }
 }
 
 /********************************************/
 
-.cta{
+.cta {
   margin: 100px auto;
   width: 80%;
   /*background-image: linear-gradient(rgba(0,0,0,0.7)), url(images/cta.jpg);*/
@@ -295,36 +444,37 @@ h3 {
   padding: 100px 0;
 }
 
-.cta h1{
+.cta h1 {
   color: #fff;
   margin-bottom: 40px;
   padding: 0;
 }
 
-@media(max-width: 700px){
-  .cta{
-    background-image: linear-gradient(rgba(0,0,0,0.2)), url(images/cta.jpg);
+@media(max-width: 700px) {
+  .cta {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2)), url(images/cta.jpg);
   }
-  .cta h1{
+
+  .cta h1 {
     font-size: 24px;
-  }  
+  }
 }
 
 /***********************************************************/
 
-.footer{
+.footer {
   width: 100%;
   text-align: center;
   padding: 30px 0;
 }
 
-.footer h4{
+.footer h4 {
   margin-bottom: 25px;
   margin-top: 20px;
   font-weight: 600;
 }
 
-.icons .fa{
+.icons .fa {
   color: #f44336;
   margin: 0 13px;
   cursor: pointer;
@@ -340,23 +490,51 @@ h3 {
 
 
 
-.contenedor-tataraabuelo {
-  width: 100%;    
+.services02 {
+  width: 100%;
   padding: 40px 0;
+  background:
+    /* Overlay de color rojo suave (arriba) a blanco rosado (abajo) */
+    linear-gradient(to bottom,
+      rgba(244, 67, 54, 0.4),
+      /* Rojo principal al 40% */
+      rgba(255, 243, 243, 0.2)
+      /* Blanco rosado al 20% */
+    ),
+    /* Tu imagen original */
+    url('images/fondoServicios02.jpg') center/cover fixed;
+
+  /* Aplicamos filtros de color a la imagen */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      /* Efecto "colorize" naranja-rojizo */
+      linear-gradient(rgba(244, 67, 54, 0.15),
+        rgba(255, 243, 243, 0.1));
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 /* Contenedor ABUELO (centrado con ancho máximo) */
-.contenedor-abuelo {
+.contenedor-servicios {
   max-width: 1140px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  /* Espacio entre contenedores-padre */
+  /* Asegura que el contenido no herede los filtros */
+  position: relative;
+  z-index: 1;
 }
 
 /* Contenedores PADRE (25% de ancho) */
-.contenedor-padre {
+.contenedor-servicio {
   width: calc(25% - 10px);
   /* Ajuste por el gap */
   padding: 15px;
@@ -366,7 +544,7 @@ h3 {
 }
 
 /* Contenedores HIJO (con background-image) */
-.contenedor-hijo {
+.servicio {
   width: 100%;
   height: 400px;
   position: relative;
@@ -396,25 +574,25 @@ h3 {
 }
 
 /* Efecto hover */
-.contenedor-hijo:hover {
+.servicio:hover {
   transform: scale(0.95);
   /* Ligera reducción de tamaño */
 }
 
-.contenedor-hijo::after {
+.servicio::after {
   /* ... (tu gradiente actual) ... */
   opacity: 0.7;
   /* Hacemos el gradiente más visible por defecto */
   transition: all 0.5s ease-in-out;
 }
 
-.contenedor-hijo:hover::after {
+.servicio:hover::after {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
   opacity: 1;
   /* Oscurece completamente al hacer hover */
 }
 
-.contenedor-hijo .hover-content {
+.servicio .hover-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -433,7 +611,7 @@ h3 {
   text-align: center;
 }
 
-.contenedor-hijo:hover .hover-content {
+.servicio:hover .hover-content {
   opacity: 1;
   transform: scale(1);
   position: absolute;
@@ -491,63 +669,63 @@ h3 {
 }
 
 /* Efectos hover */
-.contenedor-hijo:hover .hover-content h3 {
+.servicio:hover .hover-content h3 {
   font-weight: 400;
   /* Más delgado en hover */
 }
 
-.contenedor-hijo:hover .hover-content .icono {
+.servicio:hover .hover-content .icono {
   background-color: #f44336;
   /* Color principal en hover */
 }
 
-.contenedor-hijo:hover .hover-content .btn-vermas {
+.servicio:hover .hover-content .btn-vermas {
   opacity: 1;
   transform: translateY(0);
 }
 
-.contenedor-padre:nth-child(1) .contenedor-hijo {
+.contenedor-servicio:nth-child(1) .servicio {
   background-image: url('images/servicioInfraestructuraConstruccion.jpg');
 }
 
-.contenedor-padre:nth-child(2) .contenedor-hijo {
+.contenedor-servicio:nth-child(2) .servicio {
   background-image: url('images/servicioBaseDatos.jpg');
 }
 
-.contenedor-padre:nth-child(3) .contenedor-hijo {
+.contenedor-servicio:nth-child(3) .servicio {
   background-image: url('images/servicioCableado.jpg');
 }
 
-.contenedor-padre:nth-child(4) .contenedor-hijo {
+.contenedor-servicio:nth-child(4) .servicio {
   background-image: url('images/servicioDrywall.jpg');
 }
 
-.contenedor-padre:nth-child(5) .contenedor-hijo {
+.contenedor-servicio:nth-child(5) .servicio {
   background-image: url('images/servicioRemodelacionOficina.jpg');
 }
 
-.contenedor-padre:nth-child(6) .contenedor-hijo {
+.contenedor-servicio:nth-child(6) .servicio {
   background-image: url('images/servicioPintura.jpg');
 }
 
-.contenedor-padre:nth-child(7) .contenedor-hijo {
+.contenedor-servicio:nth-child(7) .servicio {
   background-image: url('images/servicioInstalacionesElectricas.jpg');
 }
 
-.contenedor-padre:nth-child(8) .contenedor-hijo {
+.contenedor-servicio:nth-child(8) .servicio {
   background-image: url('images/servicioSistemaVigilancia.jpg');
 }
 
 /* Responsive: 2 columnas en móviles */
 @media (max-width: 768px) {
-  .contenedor-padre {
+  .contenedor-servicio {
     width: calc(50% - 10px);
   }
 }
 
 /* Responsive: 1 columna en móviles muy pequeños */
 @media (max-width: 480px) {
-  .contenedor-padre {
+  .contenedor-servicio {
     width: 100%;
   }
 }
