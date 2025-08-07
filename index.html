@@ -10,68 +10,42 @@
       rel="stylesheet"
       href="icons/font-awesome-4.7.0/css/font-awesome.min.css"
     />
+    <!--Carrusel-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
   </head>
   <body>
     <!---------------------header----------------------------->
-    <section class="header">
+    <section class="header" id="header">
       <nav>
         <a href="index.html"><img src="images/logo.png" /></a>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
-            <li><a href="">INICIO</a></li>
-            <li><a href="">SOBRE NOSOTROS</a></li>
-            <li><a href="">INFORMACIÓN</a></li>
-            <li><a href="">BLOG</a></li>
-            <li><a href="">CONTÁCTENOS</a></li>
+            <li><a href="#header">Inicio</a></li>
+            <li><a href="#quienesSomos">Sobre Nosotros</a></li>
+            <li><a href="#services02">Servicios</a></li>
+            <li><a href="#cta">Contactos</a></li>
           </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
       <div class="text-box">
-        <h1>Empresa de Construcción de Obras Civiles más Grande del Mundo</h1>
+        <h1>Soluciones en Construcción</h1>
         <p>
-          Construimos infraestructura que transforma comunidades. Más de 15 años
-          liderando proyectos <br />de desarrollo social con calidad y
+          Construimos infraestructura que transforma comunidades.
+          <br />Lideramos proyectos de desarrollo social con calidad y
           compromiso.
         </p>
-        <a href="" class="hero-btn">Visit Us To Know More</a>
+        <a href="" class="hero-btn">Conoce Más</a>
       </div>
     </section>
     <!--------------------Services y Quienes somos--------------->
-    <!----------------------Services---------------------------->
     <section class="servicesQuienessomos">
-      <section class="services">
-        <h1>Nuestros Servicios</h1>
-        <p>Soluciones integrales para el desarrollo urbano y comunitario.</p>
-        <div class="row">
-          <div class="services-col">
-            <h3>Construcción de Infraestructura Básica</h3>
-            <p>
-              Edificaciones escolares, centros de salud y espacios comunitarios.
-              Diseños antisísmicos y accesibles, cumpliendo con los más altos
-              estándares de seguridad.
-            </p>
-          </div>
-          <div class="services-col">
-            <h3>Urbanizaciones Sociales</h3>
-            <p>
-              Viviendas económicas con planificación sostenible. Incluimos
-              sistemas de agua potable, electrificación y áreas verdes para
-              mejorar la calidad de vida.
-            </p>
-          </div>
-          <div class="services-col">
-            <h3>Remodelación de Espacios Públicos</h3>
-            <p>
-              Recuperación de parques, plazas y centros históricos. Integramos
-              mobiliario urbano y accesibilidad para personas con discapacidad.
-            </p>
-          </div>
-        </div>
-      </section>
       <!---------------------Quienes Somos------------------>
-      <section class="quienesSomos">
+      <section class="quienesSomos" id="quienesSomos">
         <div class="seccion-superior">
           <div class="imagen-vertical">
             <div class="imagen-container">
@@ -119,12 +93,104 @@
           </div>
         </div>
       </section>
+      <!---------------------Sección Clientes---------------------------->
+
+      <section class="clientes">
+        <!-- Contenedor izquierdo -->
+        <div class="clientes-info">
+          <h2>Nuestros Clientes</h2>
+          <p>
+            Empresas que han confiado en nuestro trabajo y expertise en
+            construcción.
+          </p>
+        </div>
+
+        <!-- Contenedor derecho (carrusel) -->
+        <div class="clientes-carrusel">
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="images/logos/arcorLogo.png" alt="Logo Cliente 1" />
+                </li>
+                <li class="splide__slide">
+                  <img src="images/logos/yanacochaLogo.png" alt="Logo Cliente 2" />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="images/logos/bouyguesLogo.png"
+                    alt="Logo Cliente 3"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="images/logos/casaIdeasLogo.png"
+                    alt="Logo Cliente 4"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="images/logos/pngwingLogo.png"
+                    alt="Logo Cliente 5"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="images/logos/buildRenovationLogo.jpg"
+                    alt="Logo Cliente 6"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Puntos de navegación personalizados -->
+          <div class="puntos-navegacion">
+            <button class="punto" data-index="0"></button>
+            <button class="punto" data-index="1"></button>
+            <button class="punto" data-index="2"></button>
+            <button class="punto" data-index="3"></button>
+            <button class="punto" data-index="4"></button>
+            <button class="punto" data-index="5"></button>
+          </div>
+        </div>
+      </section>
+      <!----------------------Services---------------------------->
+
+      <section class="services">
+        <h1>Nuestros Servicios</h1>
+        <p>Soluciones integrales para el desarrollo urbano y comunitario.</p>
+        <div class="row">
+          <div class="services-col">
+            <h3>Construcción de Infraestructura Básica</h3>
+            <p>
+              Edificaciones escolares, centros de salud y espacios comunitarios.
+              Diseños antisísmicos y accesibles, cumpliendo con los más altos
+              estándares de seguridad.
+            </p>
+          </div>
+          <div class="services-col">
+            <h3>Urbanizaciones Sociales</h3>
+            <p>
+              Viviendas económicas con planificación sostenible. Incluimos
+              sistemas de agua potable, electrificación y áreas verdes para
+              mejorar la calidad de vida.
+            </p>
+          </div>
+          <div class="services-col">
+            <h3>Remodelación de Espacios Públicos</h3>
+            <p>
+              Recuperación de parques, plazas y centros históricos. Integramos
+              mobiliario urbano y accesibilidad para personas con discapacidad.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
-    <!------------------------------------------------->
 
-    <!-------------------------------------------------->
+    <!--------------------Sección Servicios02------------------------------>
 
-    <section class="services02">
+    <section class="services02" id="services02">
       <div class="contenedor-servicios">
         <!-- Grupo de 8 contenedores (padres) -->
         <div class="contenedor-servicio">
@@ -270,12 +336,101 @@
       </div>
     </section>
 
+    <!--------------------MAP--------------------------------->
+
+    <section class="map">
+      <div class="map-container">
+        <!-- Mapa Google Maps -->
+        <div class="map-iframe">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.965943800541!2d-77.002778!3d-12.137583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA4JzE1LjMiUyA3N8KwMDAnMTAuMCJX!5e0!3m2!1ses!2spe!4v1620000000000"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+            >
+          </iframe>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="contact-form">
+          <div class="form-header">
+            <h2>Tienes un proyecto en mente</h2>
+            <p>Escríbenos y nos pondremos en contacto contigo</p>
+          </div>
+
+          <form id="proyectoForm">
+            <div class="form-group">
+              <input type="text" id="razonSocial" name="razonSocial" required />
+              <label for="razonSocial">Razón Social/Nombres y Apellidos</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="rucDni" name="rucDni" required />
+              <label for="rucDni">RUC o DNI</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="direccion" name="direccion" required />
+              <label for="direccion"
+                >Dirección de visita para el servicio</label
+              >
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="celular" name="celular" required />
+              <label for="celular">Celular</label>
+            </div>
+
+            <div class="form-group">
+              <select id="servicio" name="servicio" required>
+                <option value="" disabled selected>Servicio Interesado</option>
+                <option value="infraestructura">
+                  Infraestructura y construcción
+                </option>
+                <option value="remodelacion">
+                  Implementación y remodelación de oficinas
+                </option>
+                <option value="drywall">Trabajos en drywall</option>
+                <option value="mamparas">
+                  Instalación de Mamparas de Vidrio y Aluminio
+                </option>
+                <option value="datos">Centro de datos</option>
+                <option value="cableado">Cableado estructurado</option>
+                <option value="electricos">
+                  Instalaciones de Sistemas eléctricos AC-DC
+                </option>
+                <option value="vigilancia">Sistemas de video Vigilancia</option>
+                <option value="pintura">Pintura en general</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                rows="3"
+                required
+              ></textarea>
+              <label for="descripcion"
+                >Descripción del servicio requerido</label
+              >
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!------------------Call To Action----------------------------->
 
-    <section class="cta">
+    <section class="cta" id="cta">
       <h1>
-        ¿Tienes un proyecto social en mente? <br />
-        Trabajamos en todo el territorio nacional y Latinoamérica
+        ¿Tienes un proyecto? <br />
+        Trabajamos en todo el territorio nacional
       </h1>
       <a href="" class="hero-btn">Contáctenos</a>
     </section>
@@ -295,12 +450,15 @@
         <i class="fa fa-facebook"></i>
         <i class="fa fa-twitter"></i>
         <i class="fa fa-instagram"></i>
-        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-linkedin"></i>        
       </div>
     </section>
+    <img src="images/wpp.png" class="wppLogo" alt="">
 
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="js/GSAP.js"></script>
+    <!--Carrusel-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   </body>
 </html>

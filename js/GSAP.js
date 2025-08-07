@@ -1,3 +1,5 @@
+/****************Efecto de Quienes somos al hacer scroll a la zona******/
+
 document.addEventListener("DOMContentLoaded", function () {
   // Configuración del Intersection Observer
   const observerOptions = {
@@ -87,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/**************************************** */
+/***************Efecto de imagen de Quienes Somos al pasar el Mouse************************* */
 
 // REEMPLAZA TODO EL CÓDIGO DE HOVER POR ESTE:
 document.querySelectorAll(".imagen-vertical").forEach((container) => {
@@ -128,5 +130,44 @@ document.querySelectorAll(".imagen-vertical").forEach((container) => {
       filter: "brightness(1)",
       duration: 0.25
     });
+  });
+});
+
+
+/*************Efecto Carrusel************* */
+
+// Importa Splide (añade esto en tu <head>)
+document.addEventListener('DOMContentLoaded', function() {
+  // Inicializa el carrusel
+  const splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    gap: '20px',
+    pagination: false,
+    arrows: false,
+    breakpoints: {
+      768: {
+        perPage: 2
+      },
+      480: {
+        perPage: 1
+      }
+    }
+  }).mount();
+
+  // Control personalizado con los puntos
+  const puntos = document.querySelectorAll('.punto');
+  
+  puntos.forEach((punto, index) => {
+    punto.addEventListener('click', () => {
+      splide.go(index);
+    });
+  });
+
+  // Actualiza puntos activos
+  splide.on('move', newIndex => {
+    puntos.forEach(punto => punto.classList.remove('active'));
+    puntos[newIndex].classList.add('active');
   });
 });
