@@ -344,6 +344,7 @@ h3 {
   .imagen-vertical,
   .contenedor-texto {
     width: 100%;
+    height: initial;
   }
 
   /* Desactiva las transformaciones de hover en móvil */
@@ -355,6 +356,7 @@ h3 {
   /* Desactiva la animación GSAP para el contenedor */
   .imagen-container {
     transition: none !important;
+    height: 240px;
   }
 
   /* Opcional: Desactiva el cambio de brillo en hover */
@@ -364,7 +366,7 @@ h3 {
 
 
   .imagen-vertical {
-    height: 300px;
+    
     border-radius: 8px 8px 0 0;
   }
 
