@@ -514,7 +514,7 @@ h3 {
       rgba(244, 67, 54, 0.4),
       rgba(255, 243, 243, 0.2)),    
     url('images/fondoServicios02.jpg') center/cover fixed;*/
-  
+
   background-color: #f7f7f7;
 
   /* Aplicamos filtros de color a la imagen */
@@ -963,9 +963,18 @@ h3 {
 
 /*****************Logo Wpp************************/
 
-.wppLogo{
+.wppLogo {
   width: 5%;
   position: fixed;
   bottom: 3%;
   right: 3%;
+}
+
+@media (max-width: 768px) {
+  .wppLogo {
+    width: 13%;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+  }
 }
